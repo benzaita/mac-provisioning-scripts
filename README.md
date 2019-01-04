@@ -2,20 +2,16 @@
 
 ```
 export USER_FULL_NAME=
+export USER_EMAIL=
 
 brew update
-brew cask install intellij-idea webstorm docker spectacle spotify visual-studio-code
-brew install git jq
+brew bundle install
 
-git config --global user.name “$USER_FULL_NAME”
-
-git config --global user.email “$USER@klarna.com”
+git config --global user.name "$USER_FULL_NAME"
+git config --global user.email "$USER_EMAIL"
 
 ./add-git-aliases
 
-# TODO: dockerize that specific project's build
-brew install node@8
 echo 'export PATH="/usr/local/opt/node@8/bin:$PATH"' >> ~/.bash_profile
-export PATH="/usr/local/opt/node@8/bin:$PATH”
-brew install yarn
+echo '[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion' >> ~/.bash_profile
 ```
